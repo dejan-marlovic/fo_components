@@ -12,8 +12,12 @@ dependencies:
   angular_forms: ^2.0.0-alpha+4
   angular_router: ^2.0.0-alpha+11
   fo_model:
-    git: https://github.com/afpatmin/fo_model.git
+    git: 
+      url: https://github.com/afpatmin/fo_model.git
+      ref: for_old_intro
   grid:
-    git: https://github.com/afpatmin/grid.git
+    git: 
+      url: https://github.com/afpatmin/grid.git
+      ref: for_old_intro
   vi_auth_client: ^0.1.1
   sass_builder: ^2.0.0
