@@ -45,7 +45,7 @@ class FoDateInputComponent implements OnChanges, ControlValueAccessor<DateTime>
       value = DateTime.parse(input.value);
     }
     on FormatException {
-      value = new DateTime(0, 0, 0, 12);
+      value = null;//new DateTime(0, 0, 0, 12);
     }
     _onChange(value);
   }
