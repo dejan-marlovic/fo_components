@@ -18,6 +18,7 @@ class FoYouTubePlayerComponent implements OnInit, OnChanges, OnDestroy {
     } else {
       _player.callMethod('playVideo');
     }   
+    playing = !playing;
   }
 
   @override
@@ -54,10 +55,10 @@ class FoYouTubePlayerComponent implements OnInit, OnChanges, OnDestroy {
   void _onReady(JsObject event) {}
 
   void _onStateChange(JsObject event) {
+    if (_player == null) return;
     switch (event['data']) {
       case -1:
-        _onStateChangeController.add('Start');
-        playing = true;
+        _onStateChangeController.add('Start');        
         break;
 
       case 0:
@@ -66,13 +67,11 @@ class FoYouTubePlayerComponent implements OnInit, OnChanges, OnDestroy {
         break;
 
       case 1:
-        _onStateChangeController.add('Play');
-        playing = true;
+        _onStateChangeController.add('Play');        
         break;
 
       case 2:
-        _onStateChangeController.add('Pause');
-        playing = false;
+        _onStateChangeController.add('Pause');        
         break;
 
       case 3:
