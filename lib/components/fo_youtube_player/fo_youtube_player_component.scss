@@ -7,8 +7,9 @@
   overflow: hidden;
   font-size: 0;
 
-  iframe
+  iframe, .overlay
   {
+    cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
@@ -18,5 +19,14 @@
     margin: 0;
     padding: 0;
     display: block;
+  }
+  .overlay {          
+    display: block;
+    z-index: 2;
+  }      
+}
+#youtube-player-wrapper.paused {
+  iframe {
+   // display: none;
   }
 }
